@@ -1,0 +1,54 @@
+package ListaCircular;
+
+public class Lista {
+	No ref;
+
+	public Lista() {
+		this.ref = null;
+	}
+
+	public void insere(int valor) {
+		No novo = new No(valor);
+		if (ref == null) {
+			this.ref = novo;
+			ref.setProx(ref);
+			return;
+		}
+		if (valor < ref.getProx().getValor()) {
+	        novo.setProx(ref.getProx());
+	        ref.setProx(novo);
+	        return;
+	    }
+		
+		if (valor >= ref.getValor()) {
+			novo.setProx(ref.getProx());
+			ref.setProx(novo);
+			ref = novo;
+			return;
+		}
+		
+		for(No aux = ref.getProx(); aux != ref ; aux = aux.getProx()) {
+			if(valor < aux.getProx().getValor()) {
+				novo.setProx(aux.getProx());
+				aux.setProx(novo);
+				return;
+			}
+		}
+	}
+		
+	public void imprimi() {
+		
+		if(ref == null) {
+			System.out.println("Lista vazia!");
+			return;
+		}
+		if(ref.getProx() == ref) {
+			System.out.println(ref.getValor());
+		}
+		
+		for(No aux = ref.getProx(); aux != ref;aux = aux.getProx()) {
+			System.out.print(aux.getValor() + " ");
+		}
+		System.out.println();
+	}
+}

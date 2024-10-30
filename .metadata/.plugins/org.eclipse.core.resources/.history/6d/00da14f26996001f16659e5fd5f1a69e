@@ -1,0 +1,15 @@
+package ListaCircular;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		Lista lista = new Lista();
+		lista.insere(4);
+		lista.insere(1);
+		lista.insere(5);
+		lista.imprimi();
+		
+
+	}
+
+}

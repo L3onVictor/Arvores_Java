@@ -1,0 +1,13 @@
+package ListaCircular;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		Lista lista = new Lista();
+		lista.insere(0);
+		lista.imprimi(1);
+		lista.imprimi();
+
+	}
+
+}
