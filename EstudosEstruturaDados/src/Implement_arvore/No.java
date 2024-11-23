@@ -54,10 +54,10 @@ public class No {
 			this.left.preOrder();
 		}
 
-		if (this.right != null)
+		if (this.right != null) {
 			this.right.preOrder();
+		}
 	}
-	
 	
 	public void emOrder() {
 		if (this.left != null) {
@@ -81,5 +81,24 @@ public class No {
 		}
 		System.out.print(this.info + " ");
 	}
+	
+	public void buscar(int valor) {
+		
+			boolean find = false; 
+		if(info == valor) {
+			System.out.println("Valor encontrado: " + valor);
+			find = true;
+			return;
+		}
+		if (this.left != null) {
+			this.left.buscar(valor);
+		}
+
+		if (this.right != null) {
+			this.right.buscar(valor);
+		}
+		
+	}
+	
 	
 }

@@ -68,6 +68,33 @@ public class Arvore {
 		}
 	}
 	
+	public void buscar(int valor) {
+		
+		if(ref != null) {
+			ref.buscar(valor);
+		}
+		
+	}
+	public void minimo() {
+		No aux = ref;
+		No min = null;
+		while(aux != null) {
+			min = aux;
+			aux = aux.getLeft();
+		}
+		System.out.println("O menor valor é: "+ min.getInfo());
+	}
+	
+	public void maximo() {
+		No aux = ref;
+		No max = null;
+		while(aux != null) {
+			max = aux;
+			aux = aux.getRight();
+		}
+		System.out.println("O maior valor é: "+ max.getInfo());
+	}
+	
 	
 
 }
